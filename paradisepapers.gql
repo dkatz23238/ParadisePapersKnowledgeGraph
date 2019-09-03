@@ -1,0 +1,67 @@
+define
+
+## Atributes
+  start-date sub attribute,
+    datatype date;
+
+  country-code sub attribute,
+    datatype string;
+
+  country sub attribute,
+      datatype string;
+
+  name sub attribute,
+      datatype string;
+
+  jurisdiction sub attribute,
+    datatype string;
+
+  node-id sub attribute,
+    datatype long;
+
+## Entities
+  financial-entity sub entity,
+    plays employer,
+    plays registrant,
+    plays x,
+    plays y,
+    key node-id,
+    has name,
+    has start-date,
+    has jurisdiction,
+    has country-code;
+
+  address-entity sub entity,
+    plays registered,
+    key node-id,
+    has name,
+    has country,
+    has country-code;
+
+
+  officer sub entity,
+    plays employee,
+    key node-id,
+    has name,
+    has jurisdiction,
+    has country-code;
+
+
+
+  intermediary sub financial-entity;
+
+  other sub financial-entity;
+
+  ##  Relationships
+
+  employement sub relation,
+    relates employer,
+    relates employee;
+
+  connection sub relation,
+    relates x,
+    relates y;
+
+  registration sub relation,
+    relates registrant,
+    relates registered;

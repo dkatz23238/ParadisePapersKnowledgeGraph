@@ -1,0 +1,9 @@
+match
+$ent isa financial-entity,
+  has node-id $id,
+  has name $name,
+  has start-date $date,
+  has country-code $country,
+  has jurisdiction $jurisdiction;
+  
+get;
