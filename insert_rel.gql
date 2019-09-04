@@ -1,0 +1,4 @@
+match
+  $n1 isa thing, has node-id $nodeid1;
+  $n2 isa address-entity, has node-id $nodeid2;
+insert $registration (registrant: $org, registered: $person) isa registration;

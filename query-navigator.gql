@@ -1,0 +1,9 @@
+match 
+$ent isa financial-entity,
+  has country-code $country,
+  has name $name;
+$name contains "Navigator";
+$reg (registrant: $ent, registered: $adr) isa registration;
+get;
+offset 0;
+limit 30;

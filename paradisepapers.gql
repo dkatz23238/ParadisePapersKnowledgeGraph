@@ -40,13 +40,15 @@ define
 
 
   officer sub entity,
+    plays registrant,
     plays employee,
+    plays employer,
+    plays x,
+    plays y,
     key node-id,
     has name,
     has jurisdiction,
     has country-code;
-
-
 
   intermediary sub financial-entity;
 
@@ -65,3 +67,7 @@ define
   registration sub relation,
     relates registrant,
     relates registered;
+
+  intermediaryship sub relation,
+    relates x,
+    relates y;
